@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/blue_shade_1"
+    android:gravity="center">
+
+
+    <EditText
+        android:id="@+id/idEdtCourseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Course Name"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_border" />
+
+
+    <EditText
+        android:id="@+id/idEdtCoursePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Course Price"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_border" />
+
+
+    <EditText
+        android:id="@+id/idEdtCourseSuitedFor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Course Suited For"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_border" />
+
+
+    <EditText
+        android:id="@+id/idEdtCourseImageLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Course Image Link"
+        android:inputType="textUri"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_border" />
+
+
+
+
+
+    <EditText
+        android:id="@+id/idEdtCourseDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Course Description"
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_border" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/idBtnUpdateCourse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update Course"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:background="@color/blue_shade_2"
+            android:textColor="@color/white"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center" />
+
+
+        <Button
+            android:id="@+id/idBtnDeleteCourse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete Course"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp"
+            android:textAlignment="center" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/idPBLoading"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress_back"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

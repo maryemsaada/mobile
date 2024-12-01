@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/blue_shade_1"
+    android:gravity="center"
+    android:weightSum="1">
+
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        />
+
+
+    <EditText
+        android:id="@+id/idEdtUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Username"
+        android:inputType="text"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"
+        android:background="@android:color/white" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/idEdtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"
+        android:background="@android:color/white" />
+
+
+
+    <Button
+        android:id="@+id/idBtnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="18sp"
+        android:padding="18dp"
+        android:background="@color/blue_shade_2"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:onClick="onLoginClicked"
+        />
+
+
+    <TextView
+        android:id="@+id/idTVRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="new user? Register here"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:onClick="onLoginLinkClicked"
+        android:textSize="18sp" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/idPBLoading"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_back"
+        android:visibility="gone" />
+
+</LinearLayout>
