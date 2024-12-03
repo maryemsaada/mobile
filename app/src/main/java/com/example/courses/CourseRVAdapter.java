@@ -29,6 +29,10 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         this.context = context;
         this.courseClickInterface = courseClickInterface;
     }
+    public void filterList(ArrayList<CourseRVModal> filteredList) {
+        courseRVModalArrayList = filteredList; // Update the list in the adapter
+        notifyDataSetChanged(); // Notify adapter about the changes
+    }
 
     @NonNull
     @Override
@@ -43,11 +47,11 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         holder.courseNameTV.setText(courseRVModal.getCourseName());
         holder.coursePriceTV.setText("DT. " + courseRVModal.getCoursePrice());
 
-        // Handle null or empty courseImg
+
         if (courseRVModal.getCourseImg() != null && !courseRVModal.getCourseImg().isEmpty()) {
             Picasso.get().load(courseRVModal.getCourseImg()).into(holder.courseIV);
         } else {
-            holder.courseIV.setImageResource(R.drawable.image_placeholder); // use a placeholder image
+            holder.courseIV.setImageResource(R.drawable.image_placeholder);
         }
 
         setAnimation(holder.itemView, position);
@@ -67,7 +71,7 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         return courseRVModalArrayList.size();
     }
 
-    // ViewHolder class to hold the views
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView courseNameTV, coursePriceTV;
         private ImageView courseIV;
@@ -80,7 +84,7 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         }
     }
 
-    // Interface to handle clicks on RecyclerView items
+
     public interface CourseClickInterface {
         void onCourseClick(int position);
     }

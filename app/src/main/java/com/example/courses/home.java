@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -155,8 +156,38 @@ public class home extends AppCompatActivity implements CourseRVAdapter.CourseCli
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false; // We don't handle submit events
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Filter the list based on the search query
+                filterCourses(newText);
+                return true;
+            }
+        });
+
         return true;
     }
+
+    private void filterCourses(String text) {
+        ArrayList<CourseRVModal> filteredList = new ArrayList<>();
+
+        for (CourseRVModal item : courseRVModalArrayList) {
+            if (item.getCourseName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+
+        courseRVAdapter.filterList(filteredList); // Pass the filtered list to the adapter
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
